@@ -10,6 +10,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

@@ -12,13 +12,14 @@ const routes: Routes = [
 {path:'' , component: BlankLayoutComponent , children:[
   {path:"" , redirectTo: 'table' , pathMatch: 'full'},
   {path:"table" , component:TableComponent , title: "Your Tasks"},
-  {path:"addTask" , component: AddTaskComponent , title:"Add Task"}
+  {path:"addtask" , component: AddTaskComponent , title:"Add Task"}
 ]}
   ,
   {path:'', component:AuthLayoutComponent , children:[
-    {path:"signIn" , component: SignInComponent , title:"Sign In"},
-    {path:"signUp" , component: SignUpComponent , title:"Sign Up"},
+    {path:"signin" , component: SignInComponent , title:"Sign In"},
+    {path:"signup" , component: SignUpComponent , title:"Sign Up"},
   ]},
+  
   {path:"**" , component:NotfoundComponent , title:"Not Found"}
 ];
 

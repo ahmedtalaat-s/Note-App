@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
+:host {
+    background-image: linear-gradient(to right bottom, #ea75b1, #81d4e7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  main{
+    min-height: 80%;
+    min-width: 60%;
+    background: #ffffff3b;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(90px);
+    box-shadow: 0 0 10px rgba(0, 0,0,0.2);
+    transition: all .6s linear;
+    &:hover{
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+    }
+  }
+
+  main .content{
+    width: 105% !important;
+  }
+
+  main .leftSide h1{
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 5px;
+    font-size: 60px;
+  }
+  
+  main .right-side > div{
+    margin-top: 90px;
+  }
+@media(max-width:991px){
+  main .right-side > div{
+    margin-top: 20px;
+  }
+}
+  
+  main .leftSide{
+    margin-top: 81px;
+  }
+
+
+
+  .wave-text span {
+    display: inline-block;
+    animation: wave 1s ease-in-out infinite;
+  }
+  
+  .wave-text span:nth-child(1) { animation-delay: 0s; }
+  .wave-text span:nth-child(2) { animation-delay: 0.4s; }
+  .wave-text span:nth-child(3) { animation-delay: 0.7s; }
+  .wave-text span:nth-child(4) { animation-delay: 1s; }
+  .wave-text span:nth-child(5) { animation-delay: 1.3s; }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .heading a.log{
+    text-decoration: none;
+    color:#c2548f;
+    cursor: pointer !important;
+  }
+
+
+.signInForm input:focus{
+  border-color: transparent !important;
+  box-shadow: 0 0 0 0.25rem rgb(248 168 249 / 32%) !important;
+}
+
+.signInForm label{
+  font-weight: 600;
+  &::placeholder{
+    color: rgb(159, 159, 159);
+  }
+}
+
+button.createAcccount{
+  background-color: rgb(0, 0, 73);
+  height: 50px;
+  transition: all 1s linear;
+  &:hover{
+    background-color: white;
+    color:  rgb(0, 0, 73) !important;
+  }
+}
+
+.alert{
+  width: 300px;
+  background-color: #c2548f;
+  border-top-left-radius: 20px;
+  color: white;
+  font-weight: 600;
+}
