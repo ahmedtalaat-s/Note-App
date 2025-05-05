@@ -10,6 +10,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
