@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { signUp, updateProfile } from '../../firebase-envirnoment';
+import { signIn, signUp, updateProfile } from '../../firebase-envirnoment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +22,15 @@ export class AuthService {
       "idToken":id,
       "displayName": name
     })
-      // "photoUrl"
-
+    // "photoUrl"
   }
 
+  loginWithEmailAndPassword(email: string, password: string):Observable<any>{
+    return this._http.post(signIn, {
+      'email': email,
+      'password': password,
+      'returnSecureToken': true
+    })
+  }
 
 }

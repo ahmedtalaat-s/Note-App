@@ -50,7 +50,7 @@ export class SignUpComponent {
             this.signUpSuccess = true;
             setTimeout(() => {
               this.signUpSuccess = false;
-              this._Router.navigate(['table'])
+              this._Router.navigate(['notes'])
             }, 1500)
           }
         })
