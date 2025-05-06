@@ -1,15 +1,38 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent implements AfterViewInit {
+export class NotesComponent implements AfterViewInit, OnInit {
+  constructor(private router: Router) {}
+
   @ViewChild('colorsContainer') colorsContainer!: ElementRef;
 
   showColors = false;
   notes: { text: string; color: string; isEditing: boolean }[] = [];
+
+  showInfo: boolean = false;
+  fullName: string = '';
+  email: string = '';
+
+  ngOnInit(): void {
+    const userData = localStorage.getItem('curretUser');
+    if (userData) {
+      const parsedUser = JSON.parse(userData);
+      console.log('Loaded user:', parsedUser); 
+      this.fullName = parsedUser.fullName;
+      this.email = parsedUser.email;
+    }
+  }
+  
+
+  ngAfterViewInit() {
+    const colorDivs = this.colorsContainer.nativeElement.querySelectorAll('div');
+    colorDivs.forEach((div: HTMLElement) => div.style.display = 'none');
+  }
 
   toggleColors() {
     this.showColors = !this.showColors;
@@ -21,6 +44,10 @@ export class NotesComponent implements AfterViewInit {
     } else {
       colorDivs.forEach((div: HTMLElement) => div.style.display = 'none');
     }
+  }
+
+  toggleInfo() {
+    this.showInfo = !this.showInfo;
   }
 
   addNote(color: string) {
@@ -50,7 +77,6 @@ export class NotesComponent implements AfterViewInit {
   }
 
   saveNote(idx: number) {
-
     const noteElement = document.querySelector(`[data-index="${idx}"] .editable-note`) as HTMLElement;
     if (noteElement) {
       this.notes[idx].text = noteElement.innerText;
@@ -58,8 +84,10 @@ export class NotesComponent implements AfterViewInit {
     this.notes[idx].isEditing = false;
   }
 
-  ngAfterViewInit() {
-    const colorDivs = this.colorsContainer.nativeElement.querySelectorAll('div');
-    colorDivs.forEach((div: HTMLElement) => div.style.display = 'none');
+  signOut() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/signin']);
   }
+
+
 }

@@ -1,0 +1,20 @@
+
+:host {
+    background-image: linear-gradient(to right bottom, #ea75b1, #81d4e7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .notes{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+    &:hover{
+        background-color: #ea75b1 !important;
+    }
+  }
