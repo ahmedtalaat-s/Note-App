@@ -57,3 +57,28 @@
   .colors div:nth-child(4){
     top: 170px;
   }
+  
+.editable-note {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  min-height: 1.2em;
+  caret-color: #000;           
+}
+
+.editable-note:focus {
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+}
+
+p {
+  margin: 0;
+  text-align: center;
+  cursor: text; 
+}

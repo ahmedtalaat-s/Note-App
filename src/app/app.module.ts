@@ -10,8 +10,9 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,15 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
     AuthLayoutComponent,
     BlankLayoutComponent,
-    NotesComponent
+    NotesComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
