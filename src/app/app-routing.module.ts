@@ -4,14 +4,14 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
-import { TableComponent } from './table/table.component';
+import { NotesComponent} from './Notes/notes.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 const routes: Routes = [
 {path:'' , component: BlankLayoutComponent , children:[
-  {path:"" , redirectTo: 'table' , pathMatch: 'full'},
-  {path:"table" , component:TableComponent , title: "Your Tasks"},
+  {path:"" , redirectTo: 'notes' , pathMatch: 'full'},
+  {path:"notes" , component:NotesComponent , title: "Your Notes"},
   {path:"addtask" , component: AddTaskComponent , title:"Add Task"}
 ]}
   ,

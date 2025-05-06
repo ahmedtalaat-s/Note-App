@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { TableComponent } from './table/table.component';
+import { NotesComponent} from './Notes/notes.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
@@ -18,11 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    TableComponent,
     AddTaskComponent,
     NotfoundComponent,
     AuthLayoutComponent,
-    BlankLayoutComponent
+    BlankLayoutComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
