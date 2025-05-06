@@ -1,0 +1,59 @@
+
+:host {
+    background-image: linear-gradient(to right bottom, #ea75b1, #81d4e7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container  main{
+    min-height: 600px;
+    min-width: 60%;
+    background: #ffffff3b;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0,0,0.2);
+    border-radius: 30px;
+  }
+
+  .addNote{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all .6s ease-in-out;
+    &:hover{
+      background-color: #ff2e9a !important;
+    }
+  }
+
+  .colors div{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    left: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+  }
+
+  .colors div:nth-child(1){
+    top: 80px;
+  }
+
+  .colors div:nth-child(2){
+    top: 110px;
+  }
+
+  .colors div:nth-child(3){
+    top: 140px;
+  }
+
+  .colors div:nth-child(4){
+    top: 170px;
+  }
