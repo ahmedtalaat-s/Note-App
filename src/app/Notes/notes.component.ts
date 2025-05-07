@@ -88,7 +88,7 @@ export class NotesComponent implements AfterViewInit, OnInit {
   }
 
   signOut() {
-    localStorage.removeItem('currentUser');
+    localStorage.clear();
     this.router.navigate(['/signin']);
   }
 

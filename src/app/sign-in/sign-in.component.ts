@@ -35,7 +35,8 @@ export class SignInComponent {
               id:res.localId,
               fullName: res.displayName,
               email: res.email,
-              idToken:res.idToken
+              idToken:res.idToken,
+              imgUrl:res.photoUrl
             }
             localStorage.setItem('currentUser', JSON.stringify(currentUser))
             // navigate to home
@@ -44,7 +45,7 @@ export class SignInComponent {
             this.signInSuccess = true;
             setTimeout(() => {
               this.signInSuccess = false;
-              this._Router.navigate(['notes'])
+              this._Router.navigate(['/notes'])
             }, 1500)
       },
       error: (err) => {
