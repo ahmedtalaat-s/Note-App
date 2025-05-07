@@ -17,17 +17,19 @@ export class NotesComponent implements AfterViewInit, OnInit {
   showInfo: boolean = false;
   fullName: string = '';
   email: string = '';
+  imgUrl: string = '';
 
   ngOnInit(): void {
     const userData = localStorage.getItem('curretUser');
     if (userData) {
       const parsedUser = JSON.parse(userData);
-      console.log('Loaded user:', parsedUser); 
+      console.log('Loaded user:', parsedUser);
       this.fullName = parsedUser.fullName;
       this.email = parsedUser.email;
+      this.imgUrl = parsedUser.imgUrl;
     }
   }
-  
+
 
   ngAfterViewInit() {
     const colorDivs = this.colorsContainer.nativeElement.querySelectorAll('div');

@@ -17,12 +17,13 @@ export class AuthService {
       'returnSecureToken': true
     })
   }
-  updateProfile(id:any,name: string): Observable<any> {
+  updateProfile(id:any,name: string,imgUrl:string): Observable<any> {
     return this._http.post(updateProfile, {
       "idToken":id,
-      "displayName": name
+      "displayName": name,
+    "photoUrl":imgUrl
+
     })
-    // "photoUrl"
   }
 
   loginWithEmailAndPassword(email: string, password: string):Observable<any>{
@@ -31,6 +32,17 @@ export class AuthService {
       'password': password,
       'returnSecureToken': true
     })
+  }
+
+  // upload file
+  uploadToCloudinary(file: File):Observable<any>{
+    const url = `https://api.cloudinary.com/v1_1/dqhckst1a/image/upload`;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'unsigned_preset');
+
+    return this._http.post<any>(url, formData)
   }
 
 }
