@@ -52,7 +52,7 @@ export class SignUpComponent {
               idToken: idToken,
               imgUrl:res.photoUrl
             }
-            localStorage.setItem('curretUser', JSON.stringify(currentUser))
+            localStorage.setItem('currentUser', JSON.stringify(currentUser))
             // navigate to home
             this.Message="Sign Up Success"
             this.signUpForm.reset()

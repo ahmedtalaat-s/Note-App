@@ -37,7 +37,7 @@ export class SignInComponent {
               email: res.email,
               idToken:res.idToken
             }
-            localStorage.setItem('curretUser', JSON.stringify(currentUser))
+            localStorage.setItem('currentUser', JSON.stringify(currentUser))
             // navigate to home
             this.Message="Login Success"
             this.signInForm.reset()

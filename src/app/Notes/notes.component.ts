@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotesService } from '../services/notes.service';
 
 @Component({
   selector: 'app-table',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements AfterViewInit, OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private _Notes:NotesService) {}
 
   @ViewChild('colorsContainer') colorsContainer!: ElementRef;
 
@@ -20,7 +21,7 @@ export class NotesComponent implements AfterViewInit, OnInit {
   imgUrl: string = '';
 
   ngOnInit(): void {
-    const userData = localStorage.getItem('curretUser');
+    const userData = localStorage.getItem('currentUser');
     if (userData) {
       const parsedUser = JSON.parse(userData);
       console.log('Loaded user:', parsedUser);
