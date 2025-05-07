@@ -46,8 +46,8 @@
 }
 
 .person-info{
-  width: 220px;
-  height: 200px;
+  width: 250px;
+  height: 320px;
   border-radius: 20px;
   background: #ffffff6b;
   border: 2px solid rgba(255,255,255,.2);
@@ -56,6 +56,13 @@
   top: 70px;
   right: 20px;
   z-index: 10000;
+}
+
+.person-info img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
   .colors div{

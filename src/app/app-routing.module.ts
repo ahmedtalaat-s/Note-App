@@ -9,16 +9,17 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 const routes: Routes = [
-{path:'' , component: BlankLayoutComponent , children:[
-  {path:"" , redirectTo: 'notes' , pathMatch: 'full'},
-  {path:"notes" , component:NotesComponent , title: "Your Notes"},
-  {path:"addtask" , component: AddTaskComponent , title:"Add Task"}
-]}
-  ,
   {path:'', component:AuthLayoutComponent , children:[
+    {path:"" , redirectTo: 'signin' , pathMatch: 'full'},
     {path:"signin" , component: SignInComponent , title:"Sign In"},
     {path:"signup" , component: SignUpComponent , title:"Sign Up"},
   ]},
+
+{path:'' , component: BlankLayoutComponent , children:[
+  {path:"" , redirectTo: 'signin' , pathMatch: 'full'},
+  {path:"notes" , component:NotesComponent , title: "Your Notes"},
+  {path:"addtask" , component: AddTaskComponent , title:"Add Task"}
+]},
   
   {path:"**" , component:NotfoundComponent , title:"Not Found"}
 ];
