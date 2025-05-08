@@ -34,10 +34,10 @@
         *ngFor="let note of notes; let i = index">
 
         <div
-          class="p-4 d-flex flex-column justify-content-between"
+          class="p-4 d-flex flex-column justify-content-between note-container"
           [style.backgroundColor]="note.color"
           [attr.data-index]="i"
-          style="height: 250px; border-radius: 30px; width: 100%; max-width: 250px;">
+          >
 
           <p *ngIf="!note.isEditing" (click)="editNote(i)">
             {{ note.text }}
