@@ -13,32 +13,34 @@ export class NotesService {
   idToken = JSON.parse(localStorage.getItem('currentUser') as string).idToken
   // header
   header = new HttpHeaders({
-    'Authorization':`Bearer ${this.idToken}`
+    'Authorization': `Bearer ${this.idToken}`
   })
 
   // add note method
-  addNote(userId:string,title:string,description:string): Observable<any>{
+  addNote(userId:string,color:string,content:string): Observable<any>{
     return this._HttpClient.post(addNote,
 {
   "fields":
   {
-    "title": { "stringValue": title },
-    "description": { "stringValue": description },
-    "userId": { "stringValue": userId }
+    "userId": { "stringValue": userId },
+    "content": { "stringValue": content },
+    "color": { "stringValue": color }
   }
 }
       , { headers: this.header })
   }
 
+
+
   // update Note
-  updateNote(noteId:string,userId:string,title:string,description:string): Observable<any>{
-    return this._HttpClient.post(`${updateOrDeleteNote}/${noteId}`,
+  updateNote(noteId:string,userId:string,color:string,content:string): Observable<any>{
+    return this._HttpClient.patch(`${updateOrDeleteNote}${noteId}`,
 {
   "fields":
   {
-    "title": { "stringValue": title },
-    "description": { "stringValue": description },
-    "userId": { "stringValue": userId }
+    "userId": { "stringValue": userId },
+    "content": { "stringValue": content },
+    "color": { "stringValue": color }
   }
 }
       , { headers: this.header })
@@ -62,7 +64,7 @@ export class NotesService {
   }
 
   // delete a note
-  deleteNote(noteId:string): Observable<any>{
-    return this._HttpClient.delete(`${updateOrDeleteNote}/${noteId}`, { headers: this.header })
+  deleteNote(noteId:string):Observable<any>{
+    return this._HttpClient.delete(`${updateOrDeleteNote}${noteId}`, { headers: this.header })
   }
 }

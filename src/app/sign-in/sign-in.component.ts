@@ -31,12 +31,14 @@ export class SignInComponent {
     this._AuthService.loginWithEmailAndPassword(email, password).subscribe({
       next: (res) => {
         // save user data in local storage
+        console.log(res);
+
             let currentUser = {
               id:res.localId,
               fullName: res.displayName,
               email: res.email,
               idToken:res.idToken,
-              imgUrl:res.photoUrl
+              imgUrl:res.profilePicture
             }
             localStorage.setItem('currentUser', JSON.stringify(currentUser))
             // navigate to home
