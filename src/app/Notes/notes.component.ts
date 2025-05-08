@@ -63,7 +63,7 @@ export class NotesComponent implements AfterViewInit, OnInit {
   }
 
   addNote(color: string) {
-    let content='hello its my note'
+    let content="hello it's my note"
     let noteId=''
     this._Notes.addNote(this.userId, color, content).subscribe({
       next: (res) => {
