@@ -8,7 +8,7 @@
 
 
 <div *ngIf="showInfo" class="person-info text-center p-3 d-flex flex-column align-items-center justify0content-center">
-  <img *ngIf="imgUrl" class="img-fluid"  src="{{imgUrl}}" alt="">
+  <img *ngIf="imgUrl" class="img-fluid"  [src]="imgUrl" alt="">
   <div class="d-flex align-items-center mb-2 p-3">
     <p class=" ps-2 text-center">{{ fullName }}</p>
   </div>
