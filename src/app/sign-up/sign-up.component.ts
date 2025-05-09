@@ -33,7 +33,11 @@ export class SignUpComponent {
     let name = this.signUpForm.get('name')?.value
     let email = this.signUpForm.get('email')?.value
     let password = this.signUpForm.get('password')?.value
-    await this.uploadImg()
+    if (this.imgFile) {
+      await this.uploadImg()
+    } else {
+      this.imgUrl=''
+    }
       console.log('after done');
 
     this._AuthService.signUpWithEmailAndPassword(email, password).subscribe({
@@ -41,7 +45,6 @@ export class SignUpComponent {
         console.log(res);
 
         let idToken = res.idToken
-        if(!this.imgUrl){this.imgUrl=''}
         this._AuthService.updateProfile(idToken,name,this.imgUrl).subscribe({
           next: (res) => {
             // save user data in local storage
@@ -66,6 +69,8 @@ export class SignUpComponent {
       },
       error: (err) => {
         // display error message
+        console.log(err);
+
         let error=err.error.error.message
         if (error == 'EMAIL_EXISTS') {
           this.Message='Email Already Exists'
@@ -94,7 +99,11 @@ async uploadImg(): Promise<void> {
         console.log('img done');
         console.log(this.imgUrl);
         resolve();  // signal that upload is done
-      }
+      },
+      error:(err)=>{
+        console.log(err);
+        reject();
+      },
     });
   });
 }
