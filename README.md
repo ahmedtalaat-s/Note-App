@@ -15,6 +15,8 @@ After signing up or signing in, each user can access their personalized dashboar
 - Delete notes.
 - Have all their notes persist through `localStorage`, scoped per user token.
 
+[![Notes.png](https://i.postimg.cc/66DxN3rx/Notes.png)](https://postimg.cc/14cjGy7v)
+
 ---
 
 ## 🧰 Tech Stack
