@@ -116,3 +116,15 @@ p {
   text-align: center;
   cursor: text; 
 }
+
+.note-container {
+  border-radius: 30px;
+  min-width: 250px;
+  min-height: 250px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: fit-content;
+  height: fit-content;
+  max-width: 100%; 
+}
+
