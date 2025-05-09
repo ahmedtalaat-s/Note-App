@@ -6,6 +6,7 @@ It allows users to manage their personal notes (create, read, update, and delete
 [![Screenshot-2025-05-09-130604.png](https://i.postimg.cc/sDt8bNRj/Screenshot-2025-05-09-130604.png)](https://postimg.cc/CzsmqJ1X)
 
 ---
+---
 
 ## 🔍 Overview
 
